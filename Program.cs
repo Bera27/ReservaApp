@@ -1,2 +1,40 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿
+using ReservaApp.Screens;
+
+namespace ReservaApp
+{
+    class Program
+    {
+        static void Main(String[] args)
+        {
+            Load();
+        }
+
+        public static void Load()
+        {
+            Console.Clear();
+            Console.WriteLine("O deseja");
+            Console.WriteLine();
+            Console.WriteLine("1 - Reservar equipamento");
+            Console.WriteLine("2 - Devolver equipamento");
+            Console.WriteLine("3 - Listar equipamentos reservados");
+            Console.WriteLine("4 - Buscar pessoa");
+            int resp = int.Parse(Console.ReadLine());
+
+            switch (resp)
+            {
+                case 1:
+                    ReservarEquipamentoScreen.Load();
+                    break;
+
+                case 3:
+                    ReadEquipamentosScreen.Load();
+                    break;
+
+                case 4:
+                    
+                default: break;
+            }
+        }
+    }
+}

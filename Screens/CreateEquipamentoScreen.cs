@@ -2,12 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ReservaApp.Data;
 using ReservaApp.Models;
-using ReservaApp.Repositories;
 
 namespace ReservaApp.Screens
 {
-    public static class ReservarEquipamentoScreen
+    public static class CreateEquipamentoScreen
     {
         public static void Load()
         {
@@ -41,8 +41,10 @@ namespace ReservaApp.Screens
         {
             try
             {
-                var repositories = new EquipamentoRepository();
-                repositories.Create(equipamento);
+                var context = new ReservaDataContext();
+
+                context.Add(equipamento);
+                context.SaveChanges();
                 Console.WriteLine("Equipamento reservado");
             }
             catch (Exception ex)

@@ -25,6 +25,7 @@ namespace ReservaApp.Screens
                 Program.Load();
             }
 
+            Console.Clear();
             Console.WriteLine("Pessoa encontrada:");
             Console.WriteLine();
             Console.WriteLine($"ID: {pessoa.Id} - Equipamento: {pessoa.NomeEquipamento} | Reservado por: {pessoa.NomePessoa} na data: ({pessoa.DataReservado:D}) devolução em: ({pessoa.DataDevolucao:D})");

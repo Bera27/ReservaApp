@@ -11,6 +11,7 @@ namespace ReservaApp.Screens
     {
         public static void Load()
         {
+            Console.Clear();
             var context = new ReservaDataContext();
             var equipamentos = context.Equipamentos.AsNoTracking().ToList();
 
